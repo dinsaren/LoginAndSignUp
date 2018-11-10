@@ -12,6 +12,7 @@ class LoginViewController: UIViewController,UserSignUpDelegate{
     @IBOutlet weak var fieldUsername: UITextField!
     @IBOutlet weak var fieldPassword: UITextField!
     @IBOutlet weak var labelMassage: UILabel!
+   
     
     var userLoginDelegate : UserLoginDelegate!
     var signUpViewController : SignUpViewController!
