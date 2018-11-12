@@ -18,7 +18,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var labelMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fieldPassword.delegate=self
+        fieldUsername.delegate=self
+        filedConfirmPassword.delegate=self
+        fieldUsername.becomeFirstResponder()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -39,6 +43,9 @@ class SignUpViewController: UIViewController {
         }
         
     }
+    @IBAction func buttonExitSignUp(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
@@ -50,4 +57,17 @@ class SignUpViewController: UIViewController {
     }
     */
 
+}
+
+extension SignUpViewController:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 1:fieldPassword.becomeFirstResponder()
+        case 2:filedConfirmPassword.becomeFirstResponder()
+        case 3:filedConfirmPassword.resignFirstResponder()
+        default:
+            print("Error")
+        }
+        return true
+    }
 }

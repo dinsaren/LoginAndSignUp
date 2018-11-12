@@ -11,22 +11,31 @@ import UIKit
 class LoginViewController: UIViewController,UserSignUpDelegate{
     @IBOutlet weak var fieldUsername: UITextField!
     @IBOutlet weak var fieldPassword: UITextField!
-    @IBOutlet weak var labelMassage: UILabel!
-   
+    @IBOutlet weak var labelMeassageLogin: UILabel!
+    
     
     var userLoginDelegate : UserLoginDelegate!
     var signUpViewController : SignUpViewController!
     
     func storeUserSignUp(name: String, pass: String) {
-       UserModel.userList.append(UserModel(name: name, password: pass))
-        fieldUsername.text = String(name)
-        fieldPassword.text = String(pass)
+        if name == "" && pass == ""{
+            print("No Data delegate")
+        }else{
+            UserModel.userList.append(UserModel(name: name, password: pass)) 
+            fieldUsername.text = String(name)
+            fieldPassword.text = String(pass)
+        }
+       
     }
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        fieldUsername.becomeFirstResponder()
+        fieldUsername.delegate = self
+        fieldPassword.delegate = self
+       
         
     }
     
@@ -47,18 +56,37 @@ class LoginViewController: UIViewController,UserSignUpDelegate{
     }
     
     @IBAction func buttonLogin(_ sender: Any) {
+        if fieldUsername.text == "" {
+            fieldUsername.becomeFirstResponder()
+           labelMeassageLogin.text = "* please enter username"
+        }else if fieldPassword.text == ""{
+            fieldPassword.becomeFirstResponder()
+            labelMeassageLogin.text = "Please enter password"
+        } else{
             for i in UserModel.userList{
                 if fieldUsername.text  == i.username && fieldPassword.text == i.password {
                     print("Login Success \(i.username) and \(i.password)")
+                    userLoginDelegate.displayUserName(name: "\(i.username )")
                     dismiss(animated: true, completion: nil)
-                    userLoginDelegate.displayUserName(name: "\(i.username)")
                     fieldPassword.text = ""
                     fieldUsername.text = ""
                     break
                 }
             }
-        
+        }
         
     }
+}
+extension LoginViewController:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 1: fieldPassword.becomeFirstResponder()
+        case 2: fieldPassword.resignFirstResponder()
+        default:
+            print("Error")
+        }
+        return true
+    }
+    
 }
 

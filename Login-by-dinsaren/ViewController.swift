@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var labelName: UILabel!
     
+    @IBOutlet weak var butonLabalNama: UIButton!
     var loginViewController : LoginViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,13 @@ class ViewController: UIViewController {
 }
 extension ViewController:UserLoginDelegate{
     func displayUserName(name: String) {
-        labelName.text = "Wellcome \(name)"
+        if name == "" {
+            print("No Data")
+        }else{
+             labelName.text = "Wellcome \(name)"
+             butonLabalNama.setTitle("LogOut", for:.normal)
+        }
+       
     }
 }
 
