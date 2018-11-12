@@ -29,16 +29,22 @@ class SignUpViewController: UIViewController {
     @IBAction func buttonSignUp(_ sender: Any) {
         if fieldUsername.text == ""{
             labelMessage.text = "please enter username"
+            fieldUsername.becomeFirstResponder()
         }else if fieldPassword.text == ""{
             labelMessage.text = "please enter password"
+            fieldPassword.becomeFirstResponder()
         }else if fieldUsername.text == "" && fieldPassword.text == ""{
             labelMessage.text = "plases enter username and password"
+            fieldUsername.becomeFirstResponder()
         } else if fieldPassword.text != filedConfirmPassword.text{
              labelMessage.text = "password and confirm password doesn't match"
+            filedConfirmPassword.becomeFirstResponder()
         }else{
-             labelMessage.text = "Sign Up successfully!"
-             userSignUpDelegate.storeUserSignUp(name: "\(fieldUsername.text!)", pass: "\(fieldPassword.text!)")
-             dismiss(animated: true, completion: nil)
+           
+                    labelMessage.text = "Sign Up successfully!"
+                    userSignUpDelegate.storeUserSignUp(name: "\(fieldUsername.text!)", pass: "\(fieldPassword.text!)")
+                    dismiss(animated: true, completion: nil)
+            
             
         }
         

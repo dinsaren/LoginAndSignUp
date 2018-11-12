@@ -23,7 +23,7 @@ class LoginViewController: UIViewController,UserSignUpDelegate{
         }else{
             UserModel.userList.append(UserModel(name: name, password: pass)) 
             fieldUsername.text = String(name)
-            fieldPassword.text = String(pass)
+            fieldPassword.becomeFirstResponder()
         }
        
     }
@@ -62,15 +62,22 @@ class LoginViewController: UIViewController,UserSignUpDelegate{
         }else if fieldPassword.text == ""{
             fieldPassword.becomeFirstResponder()
             labelMeassageLogin.text = "Please enter password"
+        }else if UserModel.userList.isEmpty{
+            labelMeassageLogin.text = "Please SignUp Your Account"
         } else{
             for i in UserModel.userList{
-                if fieldUsername.text  == i.username && fieldPassword.text == i.password {
+                if fieldUsername.text != i.username {
+                     labelMeassageLogin.text = "Incorrect Username"
+                } else if fieldPassword.text != i.username {
+                    labelMeassageLogin.text = "Incorrect Password"
+                }else if fieldUsername.text  == i.username && fieldPassword.text == i.password {
                     print("Login Success \(i.username) and \(i.password)")
                     userLoginDelegate.displayUserName(name: "\(i.username )")
                     dismiss(animated: true, completion: nil)
                     fieldPassword.text = ""
                     fieldUsername.text = ""
-                    break
+                }else{
+                   labelMeassageLogin.text = "Please SignUp Your Account"
                 }
             }
         }

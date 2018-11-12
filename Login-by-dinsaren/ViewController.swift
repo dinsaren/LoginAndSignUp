@@ -19,9 +19,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonOpenLogin(_ sender: Any) {
-        let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        loginViewController.userLoginDelegate=self
-        show(loginViewController, sender: nil)
+        if butonLabalNama.currentTitle == "Login Your Account"{
+            let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            loginViewController.userLoginDelegate=self
+            show(loginViewController, sender: nil)
+        }else{
+            butonLabalNama.setTitle("Login Your Account", for:.normal)
+            butonLabalNama.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            labelName.text = "Wellcome To Khmer Academy"
+            
+        }
+       
         
     }
 }
@@ -30,8 +38,10 @@ extension ViewController:UserLoginDelegate{
         if name == "" {
             print("No Data")
         }else{
-             labelName.text = "Wellcome \(name)"
+             labelName.text = "Wellcome \(name) !"
              butonLabalNama.setTitle("LogOut", for:.normal)
+             butonLabalNama.setTitleColor(.red, for: .normal)
+            
         }
        
     }

@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5M-o5-XKa">
-                                <rect key="frame" x="87" y="443.66666666666669" width="200" height="60"/>
+                                <rect key="frame" x="30" y="444" width="314" height="60"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RgM-Ey-FK0"/>
+                                    <constraint firstAttribute="height" constant="60" id="vWZ-LK-Pf4"/>
                                 </constraints>
                                 <state key="normal" title="Login Your Account">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -38,18 +38,18 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wellcome To Khmer Academy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdc-VP-qnD">
                                 <rect key="frame" x="30" y="175" width="314" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="m5M-o5-XKa" secondAttribute="trailing" constant="88" id="DLA-Eu-YJv"/>
                             <constraint firstItem="mdc-VP-qnD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="207" id="N6D-kH-k9w"/>
-                            <constraint firstItem="m5M-o5-XKa" firstAttribute="top" secondItem="mdc-VP-qnD" secondAttribute="bottom" constant="208" id="OjZ-kI-HcY"/>
+                            <constraint firstItem="m5M-o5-XKa" firstAttribute="top" secondItem="mdc-VP-qnD" secondAttribute="bottom" constant="213" id="Oyl-sP-LiE"/>
                             <constraint firstItem="mdc-VP-qnD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="73" id="beH-Qs-YzN"/>
-                            <constraint firstItem="m5M-o5-XKa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="87" id="ebP-pi-LW7"/>
+                            <constraint firstItem="m5M-o5-XKa" firstAttribute="leading" secondItem="Lgi-BP-00z" secondAttribute="leading" constant="30" id="f90-uW-TZZ"/>
+                            <constraint firstItem="Lgi-BP-00z" firstAttribute="trailing" secondItem="m5M-o5-XKa" secondAttribute="trailing" constant="31" id="k0I-Kf-ekN"/>
                             <constraint firstAttribute="trailing" secondItem="mdc-VP-qnD" secondAttribute="trailing" constant="74" id="n30-hk-Xam"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lgi-BP-00z"/>
@@ -76,12 +76,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-2U-Kk6">
-                                <rect key="frame" x="75" y="89" width="225" height="190"/>
-                                <state key="normal" title="Wellcome To Login Your Account">
-                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLM-fR-Jdv">
                                 <rect key="frame" x="35" y="320" width="305" height="50"/>
                                 <constraints>
@@ -99,7 +93,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgw-xs-NEv">
                                 <rect key="frame" x="35" y="446" width="305" height="50"/>
@@ -143,6 +137,12 @@
                                 <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-2U-Kk6">
+                                <rect key="frame" x="75" y="122" width="225" height="190"/>
+                                <state key="normal" title="Wellcome To Login Your Account">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -208,7 +208,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOK-QJ-fMG">
                                 <rect key="frame" x="34" y="405" width="306" height="50"/>
@@ -218,7 +218,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eig-Lo-tA6">
                                 <rect key="frame" x="61" y="593" width="239" height="30"/>
